@@ -9,8 +9,9 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 5f;
     private Rigidbody2D rb2d;
     public float jumpPower = 6.5f;
-    private bool jump;
+    public bool jump;
     public bool grounded;
+    public bool doubleJump;
 
 
     // Start is called before the first frame update
@@ -23,7 +24,14 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            jump = true;
+            if (grounded) {
+                jump = true;
+                doubleJump = true;
+            }else if (doubleJump)
+            {
+                jump = true;
+                doubleJump = false;
+            }
         }
     }
 
@@ -41,16 +49,16 @@ public class PlayerController : MonoBehaviour
 
         //Salto
 
-        if (jump && grounded)
+        if (jump)
         {
             rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             jump = false;
         }
-
-
-        
+       
     }
 
+
+    //controla la variable ground
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "ground")
