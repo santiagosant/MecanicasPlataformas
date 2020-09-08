@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     public float jumpPower = 6.5f;
     private bool jump;
+    public bool grounded;
 
 
     // Start is called before the first frame update
@@ -34,22 +35,35 @@ public class PlayerController : MonoBehaviour
 
         rb2d.AddForce(Vector2.right * speed * h);
 
-        if(rb2d.velocity.x > maxSpeed)
-        {
-            rb2d.velocity = new Vector2(maxSpeed, rb2d.velocity.y);
-        }
-
-        if (rb2d.velocity.x < -maxSpeed)
-        {
-            rb2d.velocity = new Vector2(-maxSpeed, rb2d.velocity.y);
-        }
+        float limitedSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed); 
+        rb2d.velocity = new Vector2(limitedSpeed, rb2d.velocity.y);
+        
 
         //Salto
 
-        if (jump)
+        if (jump && grounded)
         {
             rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             jump = false;
+        }
+
+
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "ground")
+        {
+            grounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "ground")
+        {
+            grounded = false;
         }
     }
 }
