@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    public GameObject nivelCompletado;
     public float speed = 2f;
     public float maxSpeed = 5f;
     private Rigidbody2D rb2d;
@@ -66,7 +67,8 @@ public class PlayerController : MonoBehaviour
         {
             rb2d.velocity = new Vector2(0f, rb2d.velocity.y);
             stop = false;
-        }
+        }        
+
     }
 
 
@@ -85,5 +87,11 @@ public class PlayerController : MonoBehaviour
         {
             grounded = false;
         }
+    }
+
+    //Finalizar nivel
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        nivelCompletado.SetActive(true);
     }
 }
