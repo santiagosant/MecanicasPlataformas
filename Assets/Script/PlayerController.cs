@@ -9,9 +9,10 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 5f;
     private Rigidbody2D rb2d;
     public float jumpPower = 6.5f;
-    public bool jump;
-    public bool grounded;
-    public bool doubleJump;
+    private bool jump;
+    private bool grounded;
+    private bool doubleJump;
+    public bool stop;
 
 
     // Start is called before the first frame update
@@ -32,6 +33,11 @@ public class PlayerController : MonoBehaviour
                 jump = true;
                 doubleJump = false;
             }
+        }
+
+        if (Input.GetKey(KeyCode.K))
+        {
+            stop = true;
         }
     }
 
@@ -54,7 +60,13 @@ public class PlayerController : MonoBehaviour
             rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             jump = false;
         }
-       
+
+        //Stop-Frenado de golpe        
+        if (stop)
+        {
+            rb2d.velocity = new Vector2(0f, rb2d.velocity.y);
+            stop = false;
+        }
     }
 
 

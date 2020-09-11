@@ -999,7 +999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4198605293695568047, guid: 7c07e8c474c29f04b89e6a0a4eae4213, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.947
+      value: 6.32
       objectReference: {fileID: 0}
     - target: {fileID: 4198605293695568047, guid: 7c07e8c474c29f04b89e6a0a4eae4213, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1039,7 +1039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4198605293695568047, guid: 7c07e8c474c29f04b89e6a0a4eae4213, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4195995
+      value: 0.9797123
       objectReference: {fileID: 0}
     - target: {fileID: 4198605293695568047, guid: 7c07e8c474c29f04b89e6a0a4eae4213, type: 3}
       propertyPath: m_LocalScale.x
@@ -1080,12 +1080,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac156ff6d2c487409fa76b4ee9e8187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  maxSpeed: 8
+  speed: 60
+  maxSpeed: 24
   jumpPower: 19.5
   jump: 0
   grounded: 0
-  doubleJump: 0
+  doubleJump: 1
 --- !u!1001 &3635137916063136434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1160,7 +1160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4198605293695568047, guid: 7c07e8c474c29f04b89e6a0a4eae4213, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.56
+      value: 5.81
       objectReference: {fileID: 0}
     - target: {fileID: 4198605293695568047, guid: 7c07e8c474c29f04b89e6a0a4eae4213, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1197,6 +1197,10 @@ PrefabInstance:
     - target: {fileID: 4198605293695568047, guid: 7c07e8c474c29f04b89e6a0a4eae4213, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198605293695568047, guid: 7c07e8c474c29f04b89e6a0a4eae4213, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9224896
       objectReference: {fileID: 0}
     - target: {fileID: 4198605293695568048, guid: 7c07e8c474c29f04b89e6a0a4eae4213, type: 3}
       propertyPath: m_Color.r
