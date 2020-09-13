@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //Para saltar
         if (Input.GetKeyDown(KeyCode.J))
         {
             if (grounded) {
@@ -38,17 +40,25 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        //Tecla para frenar eje X
         if (Input.GetKey(KeyCode.K))
         {
             stop = true;
         }
 
+        //Menu de "pausa" (mentira porque no pause el juego)
         if (Input.GetKeyDown(KeyCode.Escape) && !menu.activeSelf)
         {
             menu.SetActive(true);
         }else if(Input.GetKeyDown(KeyCode.Escape) && menu.activeSelf)
         {
             menu.SetActive(false);
+        }
+
+        //Recargar el nivel 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -78,8 +88,7 @@ public class PlayerController : MonoBehaviour
         {
             rb2d.velocity = new Vector2(0f, rb2d.velocity.y);
             stop = false;
-        }        
-
+        }             
     }
 
 
