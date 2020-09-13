@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public GameObject nivelCompletado;
+    public GameObject menu;
     public float speed = 2f;
     public float maxSpeed = 5f;
     private Rigidbody2D rb2d;
@@ -40,7 +42,16 @@ public class PlayerController : MonoBehaviour
         {
             stop = true;
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !menu.activeSelf)
+        {
+            menu.SetActive(true);
+        }else if(Input.GetKeyDown(KeyCode.Escape) && menu.activeSelf)
+        {
+            menu.SetActive(false);
+        }
     }
+
 
     // Update is called once per frame
     void FixedUpdate()
