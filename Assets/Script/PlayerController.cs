@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject nivelCompletado;
     public GameObject menu;
+    public GameObject proxNivel;
     public float speed = 2f;
     public float maxSpeed = 5f;
     private Rigidbody2D rb2d;
@@ -113,5 +114,6 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         nivelCompletado.SetActive(true);
+        proxNivel.SetActive(true);
     }
 }
