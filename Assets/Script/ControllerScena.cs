@@ -11,6 +11,11 @@ public class ControllerScena : MonoBehaviour
         SceneManager.LoadScene(nombre);
     }
 
+    public void ProximoNivel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void Salir()
     {
         print("saliendo");
