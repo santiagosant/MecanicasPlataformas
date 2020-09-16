@@ -13,9 +13,9 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 5f;
     private Rigidbody2D rb2d;
     public float jumpPower = 6.5f;
-    private bool jump;
-    private bool grounded;
-    private bool doubleJump;
+    public bool jump;
+    public bool grounded;
+    public bool doubleJump;
     public bool stop;
 
 
