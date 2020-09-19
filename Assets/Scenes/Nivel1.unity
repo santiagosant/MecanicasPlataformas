@@ -1837,6 +1837,10 @@ PrefabInstance:
       propertyPath: proxNivel
       value: 
       objectReference: {fileID: 1562550793}
+    - target: {fileID: 3927665451777168817, guid: e2cdcbad62ca66844bf657b776df75db, type: 3}
+      propertyPath: sonidoDeSalto
+      value: 
+      objectReference: {fileID: 7083003054479176461, guid: de2662cdb24a3f548aba2b52e277e4c9, type: 3}
     - target: {fileID: 8599892234282147039, guid: e2cdcbad62ca66844bf657b776df75db, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1954701

@@ -14,10 +14,12 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 5f;
     private Rigidbody2D rb2d;
     public float jumpPower = 6.5f;
-    public bool jump;
-    public bool grounded;
-    public bool doubleJump;
-    public bool stop;
+    private bool jump;
+    private bool grounded;
+    private bool doubleJump;
+    private bool stop;
+    public GameObject sonidoDeSalto;
+
 
 
     // Start is called before the first frame update
@@ -82,6 +84,10 @@ public class PlayerController : MonoBehaviour
         {
             rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             jump = false;
+
+            //Sonido de salto
+            GameObject sonido = Instantiate(sonidoDeSalto);
+            Destroy(sonido, .5f);
         }
 
         //Stop-Frenado de golpe        
