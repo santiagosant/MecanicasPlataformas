@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SeleccionDeNivel.unity
     guid: 0e676a17be796d4458a9f44ff3a47f79
+  - enabled: 1
+    path: Assets/Scenes/Creative Commons.unity
+    guid: fec04c287d9bd1d4ba48bad62f4288df
   m_configObjects: {}
