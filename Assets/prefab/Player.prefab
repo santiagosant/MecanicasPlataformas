@@ -146,7 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nivelCompletado: {fileID: 0}
   menu: {fileID: 0}
+  proxNivel: {fileID: 0}
   speed: 60
-  maxSpeed: 24
+  maxSpeed: 20
   jumpPower: 19.5
-  stop: 0
+  sonidoDeSalto: {fileID: 0}
